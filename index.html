@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Czerynne: creative marketer & designer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--pink:#FF3B9D;--dpink:#E62F8D;--mpink:#FF8BC8;--lpink:#FFD6EC;--yel:#FFE54D;--gold:#FFC700;--lyel:#FFF9C4;--lime:#B6FF4D;--mgreen:#90EE6B;--llime:#E9FFB3;--k:#1A1A1A;
+--bg:#fff;--ink:#1A1A1A;--soft:#F5F5F5;--line:#D9D9D9;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1A1A1A;--ink:#fff;--soft:#262626;--line:#444}}
+:root[data-theme="dark"]{--bg:#1A1A1A;--ink:#fff;--soft:#262626;--line:#444}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(72px + env(safe-area-inset-top,0px))}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 'DM Sans',system-ui,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}
+h1,h2,h3,.d{font-family:'Bricolage Grotesque','DM Sans',system-ui,sans-serif;font-weight:800;line-height:.98;letter-spacing:-.035em}
+h2{font-size:clamp(36px,5.5vw,72px)}h3{font-size:clamp(26px,3vw,36px)}h4{font-size:15px;margin:22px 0 2px}
+a{color:inherit}:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+main{outline:none;display:block}
+.w{max-width:1200px;margin:auto;padding:0 clamp(18px,4vw,40px)}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;z-index:99;background:var(--yel);color:var(--k);padding:8px}
+/* header */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:2px solid var(--ink)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{display:flex;align-items:center;gap:6px;font:800 28px 'Bricolage Grotesque',sans-serif;letter-spacing:-.05em;text-decoration:none}
+.logo svg{transition:transform .3s}.logo:hover svg{transform:rotate(-14deg) scale(1.1)}
+nav a{margin-left:20px;text-decoration:none;font-weight:500;position:relative;padding:2px 5px;isolation:isolate}
+nav a::before{content:"";position:absolute;inset:45% 0 0;background:var(--yel);transform:scaleX(0);transform-origin:left;transition:transform .25s;z-index:-1}
+nav a:hover::before,nav a[aria-current]::before{transform:scaleX(1)}
+nav a[aria-current]::before{background:var(--lime)}
+nav a:hover,nav a[aria-current]{color:var(--k)}
+.mb{display:none;font:700 15px 'DM Sans';background:var(--yel);color:var(--k);border:2px solid var(--ink);padding:6px 14px;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;cursor:pointer}
+@media(max-width:760px){.mb{display:block}nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:2px solid var(--ink);padding:10px 20px 20px;flex-direction:column}nav.open{display:flex}nav a{margin:0;padding:10px 0;font:800 34px 'Bricolage Grotesque'}}
+/* bits */
+.btn{display:inline-block;border:2px solid var(--ink);background:var(--pink);color:var(--k);padding:12px 22px;font-weight:700;text-decoration:none;box-shadow:4px 4px 0 var(--ink);transition:.15s;border-radius:255px 15px 225px 15px/15px 225px 15px 255px;margin:0 10px 10px 0}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--ink);background:var(--yel)}.btn.l:hover{background:var(--lime)}
+.tag{display:inline-block;font-size:14px;font-weight:700;background:var(--yel);color:var(--k);padding:2px 12px;transform:rotate(-2deg);border-radius:255px 15px 225px 15px/15px 225px 15px 255px}
+.ph{background:var(--lyel);color:var(--k);padding:0 4px;border-bottom:2px dashed var(--gold)}
+.img{background-color:var(--c,var(--lpink));background-image:radial-gradient(#1a1a1a33 1.5px,transparent 1.5px);background-size:18px 18px;border:2px solid var(--ink);color:var(--k);display:grid;place-items:center;text-align:center;font-weight:500;padding:12px;border-radius:6px;min-height:120px}
+img{max-width:100%;display:block;border:2px solid var(--ink)}
+.sec{padding:clamp(44px,7vw,96px) 0}
+.lead{font:700 clamp(21px,2.6vw,30px)/1.25 'Bricolage Grotesque',sans-serif;letter-spacing:-.02em;max-width:34ch}
+p{max-width:62ch}
+/* hero */
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:clamp(24px,5vw,60px);align-items:center;padding:clamp(34px,6vw,80px) 0}
+.hero h1{font-size:clamp(54px,11vw,150px);margin-bottom:24px}
+.hl{display:inline-block;background:var(--pink);color:var(--k);padding:0 .1em;transform:rotate(-2deg);animation:pop .7s cubic-bezier(.3,1.6,.5,1) both .2s}
+@keyframes pop{from{transform:rotate(-12deg) scale(.6);opacity:0}}
+.hero .lead{margin-bottom:16px}.hero p{margin-bottom:26px}
+.pt{position:relative;transform:rotate(3deg)}.pt .img{aspect-ratio:4/5;box-shadow:10px 10px 0 var(--pink)}
+.stk{position:absolute;right:-18px;bottom:-26px;width:124px;height:124px;border-radius:50%;background:var(--yel);color:var(--k);border:2px solid var(--ink);font:800 21px/1 'Bricolage Grotesque';cursor:pointer;transform:rotate(-12deg);transition:.2s}
+.stk:hover{transform:rotate(8deg) scale(1.08)}.stk small{display:block;font:500 11px/1.2 'DM Sans';margin-top:4px}
+.mq{overflow:hidden;border-block:2px solid var(--ink);background:var(--lime);color:var(--k);white-space:nowrap;font:800 26px 'Bricolage Grotesque',sans-serif;padding:10px 0}
+.mq div{display:inline-block;animation:mq 30s linear infinite}.mq:hover div{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.pt{max-width:300px;margin:0 20px 30px}}
+/* about */
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,70px);align-items:start}
+.sws{display:flex;flex-wrap:wrap;gap:10px;align-items:flex-end}
+.sw{width:var(--s);aspect-ratio:1;background:var(--c);border:2px solid var(--ink);display:flex;align-items:flex-end;padding:8px;font:700 12px 'DM Sans';color:var(--k);border-radius:50% 45% 55% 40%/45% 55% 40% 50%;transition:transform .25s}
+.sw:hover{transform:rotate(12deg) scale(1.08)}
+@media(max-width:800px){.ab{grid-template-columns:1fr}}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(28px,4vw,52px) 28px;margin-top:40px}
+.card{grid-column:span 6;text-decoration:none}
+.card:nth-child(4n+1){grid-column:span 7}.card:nth-child(4n+2){grid-column:span 5;margin-top:56px}.card:nth-child(4n+3){grid-column:span 5}.card:nth-child(4n+4){grid-column:span 7;margin-top:-40px}
+.thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background-color:var(--c);background-image:radial-gradient(#1a1a1a33 1.5px,transparent 1.5px);background-size:18px 18px;border:2px solid var(--ink);border-radius:6px;box-shadow:6px 6px 0 var(--ink);transition:.2s;color:var(--k);display:grid;place-items:center}
+.thumb img{width:100%;height:100%;object-fit:cover;border:0}
+.card:hover .thumb{transform:translate(-3px,-3px) rotate(-.7deg);box-shadow:11px 11px 0 var(--pink)}
+.big{font:800 clamp(90px,16vw,200px)/1 'Bricolage Grotesque'}.thumb .lbl{position:absolute;bottom:8px;left:12px;font-size:12px}
+.thumb i{position:absolute;top:12px;left:12px;font:700 13px 'DM Sans';font-style:normal;background:var(--bg);color:var(--ink);padding:1px 10px;border:2px solid var(--ink);border-radius:20px;transform:rotate(-3deg)}
+.card h3{margin:20px 0 6px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}.tags span{font-size:13px;border:1.5px solid var(--ink);padding:0 10px;border-radius:20px}
+@media(max-width:800px){.grid{display:block}.card{display:block;margin:0 0 44px!important}}
+.cloud{display:flex;flex-wrap:wrap;gap:12px 14px;margin-top:34px}
+.cloud span{font:800 clamp(20px,3vw,34px) 'Bricolage Grotesque';letter-spacing:-.03em;padding:4px 18px;border:2px solid var(--ink);background:var(--c);color:var(--k);transform:rotate(var(--r));border-radius:255px 15px 225px 15px/15px 225px 15px 255px;transition:.2s;cursor:default}
+.cloud span:hover{transform:rotate(0) translateY(-5px);background:var(--lime)}
+.cta{display:block;text-align:center;text-decoration:none;background:var(--pink);color:var(--k);border-block:2px solid var(--ink);padding:clamp(40px,8vw,90px) 20px;font:800 clamp(40px,9vw,120px)/.95 'Bricolage Grotesque';letter-spacing:-.04em;transition:background .2s}
+.cta:hover{background:var(--yel)}
+/* listing & fun */
+.pg{padding:clamp(34px,6vw,76px) 0 0}.pg h1{font-size:clamp(54px,12vw,160px)}.pg .lead{margin-top:22px}
+.scrap{position:relative;display:flex;flex-wrap:wrap;gap:34px 26px;justify-content:center;padding:50px 0 20px}
+.pol{background:#fff;color:var(--k);padding:12px 12px 16px;width:min(300px,100%);border:2px solid var(--k);box-shadow:5px 5px 0 var(--k);transform:translate(var(--x,0),var(--y,0)) rotate(var(--r));transition:box-shadow .2s;position:relative}
+.pol:hover{box-shadow:9px 9px 0 var(--pink)}.pol .img{aspect-ratio:1}.pol h3{font-size:24px;margin:12px 0 2px}.pol::before{content:"";position:absolute;top:-14px;left:50%;width:84px;height:26px;margin-left:-42px;background:var(--yel);opacity:.85;transform:rotate(-4deg)}
+.pol:nth-child(3n)::before{background:var(--lime)}.pol:nth-child(3n+1)::before{background:var(--mpink)}
+@media(pointer:fine){.pol{cursor:grab}}
+.sticker{position:absolute;pointer-events:none;animation:wig 4s ease-in-out infinite}
+@keyframes wig{50%{transform:rotate(14deg) scale(1.08)}}
+.note{max-width:420px;margin:0 auto;background:var(--lyel);color:var(--k);padding:18px 22px;border:2px solid var(--k);transform:rotate(-1.5deg);box-shadow:5px 5px 0 var(--k)}
+/* case study */
+.ch{padding:clamp(28px,5vw,60px) 0 0}.ch h1{font-size:clamp(46px,9vw,124px);margin:14px 0 20px}.back{font-weight:700;text-decoration:none;display:inline-block;margin-bottom:14px;border-bottom:2px solid var(--pink)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));border:2px solid var(--ink);margin-top:26px}
+.meta div{padding:14px 16px;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);margin:0 -2px -2px 0}.meta b{display:block;font-size:14px;color:var(--pink)}
+.two{display:grid;grid-template-columns:.42fr 1fr;gap:clamp(24px,5vw,70px);align-items:start}.two.r{grid-template-columns:1fr .42fr}.two.r>:first-child{order:2}
+@media(max-width:800px){.two,.two.r{display:block}.two>:first-child{margin-bottom:22px}}
+.pq{font:800 clamp(26px,4vw,48px)/1.05 'Bricolage Grotesque';letter-spacing:-.03em;border-left:10px solid var(--pink);padding-left:22px;margin-top:40px}
+.stats{display:flex;flex-wrap:wrap;gap:18px;margin:30px 0}
+.st{flex:1 1 220px;padding:24px;border:2px solid var(--ink);background:var(--c);color:var(--k);box-shadow:5px 5px 0 var(--ink);font-weight:500}.st:nth-child(2){transform:rotate(1.2deg)}.st b{display:block;font:800 clamp(46px,7vw,86px)/1 'Bricolage Grotesque';letter-spacing:-.04em}
+.gal{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin:26px 0}.gal .img{min-height:170px}
+.gal .a{grid-column:span 4;grid-row:span 2}.gal .b{grid-column:span 2}
+@media(max-width:700px){.gal{grid-template-columns:1fr 1fr}.gal .a{grid-column:span 2}}
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:16px;margin:26px 0}.vids .img{aspect-ratio:9/16;border-radius:22px}.vids .img:nth-child(even){transform:translateY(24px)}
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:26px 0}.ba .img{aspect-ratio:3/4}.ba b{display:block;margin-bottom:6px}
+@media(max-width:600px){.ba{grid-template-columns:1fr}}
+.proc{list-style:none;padding:0;margin:30px 0 0}.proc li{padding:20px;border:2px solid var(--ink)}.proc li h4{margin:0 0 4px;font-size:20px;font-family:'Bricolage Grotesque'}
+.proc.num{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0;counter-reset:s}.proc.num li{counter-increment:s;margin:0 -2px -2px 0}.proc.num h4::before{content:counter(s) ". ";color:var(--pink)}
+.proc.steps{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 6px 20px}.proc.steps li{min-width:250px;scroll-snap-align:start;background:var(--soft);box-shadow:5px 5px 0 var(--ink)}.proc.steps li:nth-child(odd){background:var(--llime);color:var(--k)}
+.proc.path{border-left:4px dashed var(--pink);margin-left:12px;padding-left:30px}.proc.path li{border:0;border-bottom:2px solid var(--line);position:relative;padding-left:0}.proc.path li::before{content:"";position:absolute;left:-43px;top:26px;width:20px;height:20px;border-radius:50%;background:var(--lime);border:2px solid var(--ink)}
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:30px}.notes div{padding:24px;border:2px solid var(--ink);background:var(--c);color:var(--k);transform:rotate(var(--r))}
+.next{display:block;text-decoration:none;background:var(--c);color:var(--k);border-block:2px solid var(--ink);padding:clamp(30px,6vw,70px) 20px;text-align:center;font-weight:700;transition:filter .2s}.next b{display:block;font:800 clamp(34px,7vw,90px)/1 'Bricolage Grotesque';letter-spacing:-.04em}.next:hover b{text-decoration:underline wavy}
+/* footer */
+footer{background:#1A1A1A;color:#fff;padding:60px 0 40px}footer h2{font-size:clamp(40px,8vw,104px);margin-bottom:24px}footer h2 span{color:var(--pink)}
+footer a{font:700 22px 'Bricolage Grotesque';margin-right:26px;text-decoration:none;border-bottom:3px solid var(--lime)}footer a:hover{background:var(--lime);color:#1A1A1A}footer small{display:block;margin-top:34px;color:#D9D9D9}
+.bt{position:fixed;right:max(14px,env(safe-area-inset-right,0px));bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:25;background:var(--yel);border:2px solid var(--k);border-radius:50%;width:56px;height:56px;display:none;place-items:center;cursor:pointer;box-shadow:3px 3px 0 var(--k)}.bt.on{display:grid}.bt.j svg{animation:jmp .6s}
+@keyframes jmp{40%{transform:translateY(-60px) rotate(20deg)}}
+.cur{position:fixed;left:-7px;top:-7px;width:14px;height:14px;border-radius:50%;background:var(--pink);pointer-events:none;z-index:99;transition:width .15s,height .15s,margin .15s,background .15s;mix-blend-mode:multiply}.cur.h{width:44px;height:44px;margin:-15px;background:var(--lime)}
+@media(pointer:coarse){.cur{display:none}}
+.wipe{position:fixed;inset:0;background:var(--pink);z-index:60;transform:translateY(101%);transition:transform .32s cubic-bezier(.7,0,.3,1);pointer-events:none}.wipe.on{transform:none}
+.cf{position:fixed;top:-30px;z-index:90;pointer-events:none;animation:fall 2.2s ease-in forwards}@keyframes fall{to{transform:translateY(110vh) rotate(500deg)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="cur" aria-hidden="true"></div><div class="wipe" aria-hidden="true"></div>
+<header><div class="w bar">
+<a class="logo" href="#home" aria-label="Czerynne, home"><span id="mas"></span>Czerynne</a>
+<button class="mb" aria-expanded="false" aria-controls="nav">menu</button>
+<nav id="nav" aria-label="Main"><a href="#home">Home</a><a href="#marketing">Marketing</a><a href="#design">Design</a><a href="#fun">Fun Stuff</a><a id="rs" target="_blank" rel="noopener">Resume ↗</a></nav>
+</div></header>
+<main id="main" tabindex="-1"></main>
+<footer><div class="w"><h2>let’s make something that feels like itself<span>.</span></h2><a id="em"></a><a id="li" target="_blank" rel="noopener">LinkedIn ↗</a><small>© 2026 Czerynne. Made by hand, with extra pink.</small></div></footer>
+<button class="bt" aria-label="Back to top"></button>
+<script>
+/* ===== EDIT ME ===== */
+const RESUME="https://example.com/czerynne-resume.pdf", EMAIL="hello@example.com", LINKEDIN="https://www.linkedin.com/in/your-handle";
+const IMGS={}; // add images by key, e.g. IMGS.skan="images/skan-cover.jpg"  (keys: project id, or id+"-1", id+"-2"… for gallery spots)
+const ph=t=>`<span class="ph">[${t}]</span>`;
+const MK="Marketing",DS="Design";
+const PROC={[MK]:["Audience","Strategy","Content","Execution","Analytics"],[DS]:["Research","Ideation","Visual direction","Iterations","Final design"]};
+/* Each project = one case study page. Add/remove objects here and the site updates itself. */
+const P=[
+{id:"skan",cat:MK,title:"Skan AI Skincare",c:"var(--pink)",role:"Growth and Marketing Intern",blurb:"Content-driven growth for a skincare brand.",
+ tags:["Social strategy","Content creation","Brand awareness","Audience growth"],proc:"num",fig:"gal",top:1,
+ sum:"Social media strategy, content creation, brand awareness, digital marketing, audience growth, and engagement.",
+ stats:[["+172%","engagement growth"],["300,000+","accounts reached"],["$3,000+","revenue from content-driven initiatives"]]},
+{id:"love",cat:MK,title:"Love, Czerynne",c:"var(--yel)",role:"Founder and Creative Marketer",blurb:"A handmade crochet and beaded accessories small business.",
+ tags:["Branding","Product marketing","SEO","Content creation"],proc:"steps",fig:"gal",
+ sum:"Handmade crochet and beaded accessories. Branding, social media strategy, audience research, content creation, product marketing, SEO, and small business management.",
+ stats:[["3M+","views across digital platforms"]]},
+{id:"uwfsa",cat:MK,title:"UWFSA Marketing",c:"var(--lime)",role:"Marketing Coordinator",blurb:"Culturally relevant content for a Filipino student community.",
+ tags:["Event promotion","Short-form video","Community"],proc:"path",fig:"phones",
+ sum:"Social media campaigns, event promotions, short-form video creation, content strategy, and community engagement for the Filipino student community."},
+{id:"jackies",cat:DS,title:"Jackie’s Creative Cakes and Sweets",c:"var(--lpink)",role:ph("Add your role"),blurb:"A website redesign for a Filipino-owned bakery.",
+ tags:["Visual identity","Usability","Filipino culture"],proc:"num",fig:"ba",
+ sum:"A website redesign for a Filipino-owned bakery, focused on visual identity, usability, content, and incorporating Filipino cultural elements."},
+{id:"greennest",cat:DS,title:"GreenNest",c:"var(--mgreen)",role:ph("Add your role"),blurb:"An indoor gardening starter kit concept.",
+ tags:["Product design","User research","Prototyping"],proc:"steps",fig:"gal",
+ sum:"An indoor gardening starter kit concept covering product design, ideation, user research, prototyping, and visual storytelling."},
+{id:"busstop",cat:DS,title:"Bus Stop Redesign",c:"var(--lyel)",role:ph("Add your role"),blurb:"A transit experience redesign.",
+ tags:["Accessibility","Wayfinding","Stakeholders"],proc:"path",fig:"gal",steps:["Accessibility","Usability","Stakeholder needs","Wayfinding","Refinement"],
+ sum:"A transit experience redesign focused on accessibility, usability, stakeholder needs, and wayfinding."}
+];
+const FUN=[["Crochet",-3,"var(--yel)"],["Beaded keychains",2,"var(--lpink)"],["Press-on nails",-2,"var(--llime)"],["Baking & cake decorating",3,"var(--lyel)"],["Photography",-1.5,"var(--mpink)"],["Trinket collecting",2.5,"var(--mgreen)"],["Little experiments",-2.5,"var(--lime)"]];
+/* ===== /EDIT ME ===== */
+
+const RM=matchMedia("(prefers-reduced-motion:reduce)").matches, $=s=>document.querySelector(s);
+const MAS=(s=34)=>`<svg viewBox="0 0 40 40" width="${s}" height="${s}" aria-hidden="true"><path d="M20 6c9 0 16 7 16 16 0 8-6 14-16 14S4 30 4 22C4 13 11 6 20 6z" fill="#FF3B9D" stroke="#1A1A1A" stroke-width="2.5"/><circle cx="14" cy="22" r="2.4" fill="#1A1A1A"/><circle cx="26" cy="22" r="2.4" fill="#1A1A1A"/><path d="M16 28q4 3 8 0" stroke="#1A1A1A" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M16 6q-1-4 3-5M22 6q1-5 6-3" stroke="#1A1A1A" stroke-width="2" fill="none" stroke-linecap="round"/></svg>`;
+const STAR=(c,s)=>`<svg viewBox="0 0 24 24" width="${s}" height="${s}" aria-hidden="true"><path d="M12 1l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="${c}" stroke="#1A1A1A" stroke-width="1.5" stroke-linejoin="round"/></svg>`;
+const pic=(k,label,c,st="")=>IMGS[k]?`<img src="${IMGS[k]}" alt="${label}" loading="lazy" style="${st}">`:`<div class="img" style="--c:${c};${st}"><span>[${label}]</span></div>`;
+const q=(t,x)=>`<h4>${t}</h4><p>${x}</p>`;
+
+const card=p=>`<a class="card" href="#${p.id}"><div class="thumb" style="--c:${p.c}">${IMGS[p.id]?`<img src="${IMGS[p.id]}" alt="${p.title}" loading="lazy">`:`<span class="big" aria-hidden="true">${p.title[0]}</span><span class="lbl">[add cover image]</span>`}<i>${p.cat}</i></div><div class="tags">${p.tags.map(t=>`<span>${t}</span>`).join("")}</div><h3>${p.title}</h3><p>${p.blurb}</p></a>`;
+const word=["branding","social","content","design","small business","internet culture","handmade","storytelling"].join(" ✿ ")+" ✿ ";
+
+const home=()=>`
+<section class="w hero"><div><h1>hey there! i’m <span class="hl">Czerynne</span></h1>
+<p class="lead">I give brands, products, and experiences a personality of their own.</p>
+<p>I’m a creative marketer and designer who loves turning ideas into brands, content, and experiences that feel thoughtful, memorable, and a little more like themselves.</p>
+<a class="btn" href="#marketing">See my marketing</a><a class="btn l" href="#design">See my design</a></div>
+<div class="pt"><div class="img" style="--c:var(--lpink)"><span>[Add a photo of you or a favourite handmade piece]</span></div><button class="stk" aria-label="Pronounced zur-een. Press to change colour">zur-een<small>that’s how you say it</small></button></div></section>
+<div class="mq" aria-hidden="true"><div>${word}${word}${word}${word}</div></div>
+<section class="w sec ab"><div><span class="tag">a little about me</span><h2 style="margin-top:14px">Where branding, marketing, and digital meet</h2></div>
+<div><p style="margin-bottom:16px">I’m a third-year Global Business and Digital Arts student at the University of Waterloo, interested in the intersection of branding, marketing, digital experiences, and visual storytelling.</p><p style="margin-bottom:26px">I like small businesses, handmade objects, internet culture, and the little details that make something feel uniquely itself. This site is dressed in my colours:</p>
+<div class="sws">${[["#FF3B9D",150],["#FFE54D",110],["#B6FF4D",130],["#FFD6EC",90],["#1A1A1A",100],["#FF8BC8",80]].map(([c,s])=>`<div class="sw" style="--c:${c};--s:${s}px;${c=="#1A1A1A"?"color:#fff":""}">${c}</div>`).join("")}</div></div></section>
+<section class="w sec" style="padding-top:0"><h2>Selected work</h2><div class="grid">${["skan","love","jackies","greennest"].map(i=>card(P.find(p=>p.id===i))).join("")}</div></section>
+<section class="w sec"><h2>Things I’m into</h2><div class="cloud">${["whimsical aesthetics","internet culture","creative branding","small businesses","handmade objects","crochet","baking","trinkets","press-on nails","photography","the little details"].map((t,i)=>`<span style="--c:${["var(--yel)","var(--lpink)","var(--lime)","var(--llime)"][i%4]};--r:${[-2,1.5,-1,2.5][i%4]}deg">${t}</span>`).join("")}</div></section>
+<a class="cta" href="#marketing">come explore the work →</a>`;
+
+const list=(cat,t,intro)=>`<section class="w pg"><h1>${t}</h1><p class="lead">${intro}</p><div class="grid">${P.filter(p=>p.cat===cat).map(card).join("")}</div></section><div style="height:70px"></div>`;
+
+const fun=()=>`<section class="w pg"><h1>Fun stuff</h1><p class="lead">The scrapbook. Things I make when nobody asked me to.</p>
+<div class="note" style="margin-top:36px">Psst: on a computer you can drag the polaroids around. Swap the placeholders for your own photos in the <code>FUN</code> list and <code>IMGS</code>.</div>
+<div class="scrap" id="scrap"><span class="sticker" style="left:2%;top:0">${STAR("#FFE54D",54)}</span><span class="sticker" style="right:3%;top:30%;animation-delay:-1s">${STAR("#B6FF4D",44)}</span><span class="sticker" style="left:6%;bottom:6%;animation-delay:-2s">${STAR("#FF8BC8",40)}</span>
+${FUN.map((f,i)=>`<figure class="pol" style="--r:${f[1]}deg">${pic("fun-"+i,"Add photo: "+f[0].toLowerCase(),f[2])}<figcaption><h3>${f[0]}</h3>${ph("Add a playful caption")}</figcaption></figure>`).join("")}</div></section><div style="height:70px"></div>`;
+
+const stats=p=>`<div class="stats">${p.stats.map((s,i)=>`<div class="st" style="--c:${["var(--lime)","var(--yel)","var(--lpink)"][i%3]}"><b>${s[0]}</b>${s[1]}</div>`).join("")}</div>`;
+const figs={
+ gal:p=>`<div class="gal">${pic(p.id+"-1","Hero deliverable",p.c,"").replace('class="img"','class="img a"')}${pic(p.id+"-2","Example 2","var(--yel)").replace('class="img"','class="img b"')}${pic(p.id+"-3","Example 3","var(--lime)").replace('class="img"','class="img b"')}${pic(p.id+"-4","Example 4","var(--lpink)").replace('class="img"','class="img b"')}${pic(p.id+"-5","Example 5","var(--llime)").replace('class="img"','class="img b"')}</div>`,
+ phones:p=>`<div class="vids">${[1,2,3,4].map(i=>pic(p.id+"-"+i,"Short-form video "+i,["var(--lime)","var(--lpink)","var(--yel)","var(--llime)"][i-1])).join("")}</div>`,
+ ba:p=>`<div class="ba"><div><b>Before</b>${pic(p.id+"-before","Original site screenshot","var(--soft)")}</div><div><b>After</b>${pic(p.id+"-after","Redesign mockup",p.c)}</div></div>`};
+const sec=(title,body,r)=>`<section class="w sec"><div class="two${r?" r":""}"><div><h2>${title}</h2></div><div>${body}</div></div></section>`;
+
+function study(p){
+ const mk=p.cat===MK, n=P.filter(x=>x.cat===p.cat), nx=n[(n.indexOf(p)+1)%n.length], steps=p.steps||PROC[p.cat];
+ return `<section class="w ch"><a class="back" href="#${p.cat.toLowerCase()}">← ${p.cat}</a><br><span class="tag">${p.cat} case study</span><h1>${p.title}</h1><p class="lead">${p.blurb}</p><div style="margin-top:28px">${pic(p.id,"Hero image or visual",p.c,"aspect-ratio:16/8")}</div>
+ <div class="meta"><div><b>Category</b>${p.cat}</div><div><b>My role</b>${p.role}</div><div><b>Timeline</b>${ph("Add timeline")}</div><div><b>Tools</b>${ph("Add tools")}</div></div>${p.top?`<div style="margin-top:30px">${stats(p)}</div>`:""}</section>`
+ +sec("Overview",`<p class="lead" style="max-width:40ch">${p.sum}</p>`+q("What was the project?",ph("Add a few sentences"))+q("The context",ph("Where, for whom, and when"))+q("What I set out to do",ph("Your goals")))
+ +sec("The challenge",q("The problem or opportunity",ph("Describe it"))+q("Who it was for",ph("Target audience"))+q(mk?"Audience insights":"Research and observations",ph("What you learned"))+`<blockquote class="pq">${ph("Pull quote: a key insight")}</blockquote>`,1)
+ +`<section class="w sec"><h2>${mk?"Strategy":"Process"}</h2><ol class="proc ${p.proc}">${steps.map(s=>`<li><h4>${s}</h4>${ph("Add details: "+s.toLowerCase())}</li>`).join("")}</ol></section>`
+ +sec("Final outcome",(figs[p.fig]||figs.gal)(p)+(p.stats&&!p.top?stats(p):"")+q("Deliverables",ph("List what you made")+(mk?" "+ph("Add analytics screenshots, if you have them"):" "+ph("Add final mockups and screenshots"))))
+ +`<section class="w sec"><h2>Reflection</h2><div class="notes">${[["What I learned","var(--yel)",-1],["What I’d improve","var(--lpink)",1],["Key takeaways","var(--llime)",-.6]].map(([t,c,r])=>`<div style="--c:${c};--r:${r}deg"><h3>${t}</h3><p style="margin-top:10px">${ph("Add your reflection")}</p></div>`).join("")}</div></section>`
+ +`<a class="next" href="#${nx.id}" style="--c:${nx.c}">next ${p.cat.toLowerCase()} project<b>${nx.title}</b></a>`;
+}
+
+/* routing */
+const R={home,marketing:()=>list(MK,"Marketing","Strategy, content, and the numbers behind them. Pick a project to read the full case study."),design:()=>list(DS,"Design","Problems, process, and the details I obsessed over. Pick a project to read the case study."),fun};
+const TT={home:"Czerynne: creative marketer & designer",marketing:"Marketing",design:"Design",fun:"Fun stuff"};
+const main=$("#main"), wipe=$(".wipe"); let first=1;
+function render(){
+ const id=(location.hash||"#home").slice(1), p=P.find(x=>x.id===id), v=p?()=>study(p):(R[id]||R.home), key=p?p.cat.toLowerCase():(R[id]?id:"home");
+ const run=()=>{main.innerHTML=v();document.title=(p?p.title:TT[key])+(key==="home"?"":" | Czerynne");scrollTo({top:0,behavior:"instant"});
+  document.querySelectorAll("nav a[href^='#']").forEach(a=>a.getAttribute("href")==="#"+key?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+  $("nav").classList.remove("open");$(".mb").setAttribute("aria-expanded","false");if(!first)main.focus({preventScroll:true});first=0;
+  const stk=$(".stk");if(stk){let i=0;stk.onclick=()=>{stk.style.background=["var(--lime)","var(--pink)","var(--yel)"][i++%3]}}
+  const sc=$("#scrap");if(sc&&matchMedia("(pointer:fine)").matches)sc.querySelectorAll(".pol").forEach(e=>{let sx,sy,x=0,y=0,on=0;e.onpointerdown=ev=>{on=1;sx=ev.clientX-x;sy=ev.clientY-y;e.setPointerCapture(ev.pointerId);e.style.zIndex=5;e.style.cursor="grabbing"};e.onpointermove=ev=>{if(!on)return;x=ev.clientX-sx;y=ev.clientY-sy;e.style.setProperty("--x",x+"px");e.style.setProperty("--y",y+"px")};e.onpointerup=()=>{on=0;e.style.cursor=""}})};
+ if(first||RM){run();return}
+ wipe.classList.add("on");setTimeout(()=>{run();requestAnimationFrame(()=>wipe.classList.remove("on"))},330);
+}
+addEventListener("hashchange",render);
+
+/* static bits */
+$("#mas").innerHTML=MAS();$(".bt").innerHTML=MAS(30);
+$("#rs").href=RESUME;$("#em").href="mailto:"+EMAIL;$("#em").textContent=EMAIL;$("#li").href=LINKEDIN;
+$(".mb").onclick=e=>{const o=$("nav").classList.toggle("open");e.currentTarget.setAttribute("aria-expanded",o)};
+const bt=$(".bt");addEventListener("scroll",()=>bt.classList.toggle("on",scrollY>600),{passive:true});
+bt.onclick=()=>{bt.classList.add("j");setTimeout(()=>{scrollTo({top:0,behavior:RM?"auto":"smooth"});bt.classList.remove("j")},RM?0:250)};
+/* easter egg: tap the little blob in the logo 5 times */
+let taps=0,tt;$(".logo").addEventListener("click",()=>{taps++;clearTimeout(tt);tt=setTimeout(()=>taps=0,2000);if(taps>=5){taps=0;if(RM)return;for(let i=0;i<28;i++){const s=document.createElement("span");s.className="cf";s.style.left=Math.random()*100+"vw";s.style.animationDelay=Math.random()*.8+"s";s.innerHTML=STAR(["#FF3B9D","#FFE54D","#B6FF4D","#FF8BC8"][i%4],18+Math.random()*22);document.body.append(s);setTimeout(()=>s.remove(),3200)}}});
+/* cursor */
+if(matchMedia("(pointer:fine)").matches&&!RM){const c=$(".cur");addEventListener("pointermove",e=>{c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`;c.classList.toggle("h",!!e.target.closest("a,button,.pol,.cloud span"))},{passive:true})}else $(".cur").remove();
+render();
+</script>
+</body>
+</html>
